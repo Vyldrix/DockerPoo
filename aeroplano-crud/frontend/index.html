@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Aeroplanos</title>
+    <link rel="stylesheet" href="src/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>✈️ Gestión de Aeroplanos</h1>
+        
+        <div class="form-container">
+            <h2>Crear/Editar Aeroplano</h2>
+            <form id="aeroplanoForm">
+                <input type="hidden" id="aeroplanoId">
+                
+                <div class="form-section">
+                    <h3>Hélices (Agregación)</h3>
+                    <div id="helicesContainer">
+                        <div class="helice-item">
+                            <label>Número de hélices:</label>
+                            <input type="number" class="helice-input" required min="1">
+                            <button type="button" class="remove-helice">❌</button>
+                        </div>
+                    </div>
+                    <button type="button" id="addHelice">+ Agregar Hélice</button>
+                </div>
+                
+                <div class="form-section">
+                    <h3>Turbinas (Composición)</h3>
+                    <div id="turbinasContainer">
+                        <div class="turbina-item">
+                            <label>Número de turbinas:</label>
+                            <input type="number" class="turbina-input" required min="1">
+                            <button type="button" class="remove-turbina">❌</button>
+                        </div>
+                    </div>
+                    <button type="button" id="addTurbina">+ Agregar Turbina</button>
+                </div>
+                
+                <div class="form-section">
+                    <h3>Tren de Aterrizaje (Agregación)</h3>
+                    <label>Número de neumáticos:</label>
+                    <input type="number" id="numNeumaticos" required min="1">
+                    <label>Número de amortiguadores:</label>
+                    <input type="number" id="numAmortiguadores" required min="1">
+                    <label>
+                        <input type="checkbox" id="fijoRetractil">
+                        Retráctil fijo
+                    </label>
+                </div>
+                
+                <div class="form-section">
+                    <h3>Alas (Agregación)</h3>
+                    <label>Alas frontales:</label>
+                    <input type="number" id="numAlasFrente" required min="0">
+                    <label>Alas posteriores:</label>
+                    <input type="number" id="numAlasCola" required min="0">
+                </div>
+                
+                <div class="form-section">
+                    <h3>Cubierta (Composición)</h3>
+                    <label>
+                        <input type="checkbox" id="cabinaTripulacion">
+                        Cabina de tripulación
+                    </label>
+                    <label>
+                        <input type="checkbox" id="cabinaVuelo">
+                        Cabina de vuelo
+                    </label>
+                    <label>
+                        <input type="checkbox" id="sistemaEmergencia">
+                        Sistema de emergencia
+                    </label>
+                    <label>Tanques de combustible:</label>
+                    <input type="number" id="numTanquesCombustible" required min="0">
+                    <label>Puertas de salida:</label>
+                    <input type="number" id="numPuertasSalidas" required min="0">
+                </div>
+                
+                <div class="form-buttons">
+                    <button type="submit">💾 Guardar</button>
+                    <button type="button" id="cancelEdit">❌ Cancelar</button>
+                </div>
+            </form>
+        </div>
+        
+        <div class="list-container">
+            <h2>Aeroplanos Registrados</h2>
+            <div id="aeroplanosList"></div>
+        </div>
+    </div>
+    
+    <script type="module" src="dist/app.js"></script>
+</body>
+</html>

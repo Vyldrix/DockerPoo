@@ -1,0 +1,8 @@
+{
+  "name": "dockerpoo",
+  "version": "1.0.0",
+  "description": "Root project manager",
+  "scripts": {
+    "start": "cd aeroplano-crud && docker-compose up --build"
+  }
+}
